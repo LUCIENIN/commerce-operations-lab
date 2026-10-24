@@ -1,0 +1,16 @@
+{
+  "contacts": [
+    {"id": "contact-a", "email": "permitted@example.invalid", "purpose": "demo-update", "template": "synthetic-template-a", "consent": {"status": "granted", "scope": "demo-update", "evidence": "synthetic-permission-record-a", "valid_from": 0, "valid_until": 86400}},
+    {"id": "contact-b", "email": "public-only@example.invalid", "purpose": "demo-update", "template": "synthetic-template-a", "consent": {"status": "public_address_only", "scope": "demo-update", "evidence": "synthetic-public-directory", "valid_from": 0, "valid_until": 86400}},
+    {"id": "contact-c", "email": "opted-out@example.invalid", "purpose": "demo-update", "template": "synthetic-template-a", "consent": {"status": "granted", "scope": "demo-update", "evidence": "synthetic-permission-record-c", "valid_from": 0, "valid_until": 86400}}
+  ],
+  "pages": {
+    "first": {"orders": [{"id": "demo-order-a", "quantity": 2}], "next": "page-two"},
+    "page-two": {"orders": [{"id": "demo-order-a", "quantity": 2}, {"id": "demo-order-b", "quantity": 1}]}
+  },
+  "transactions": [
+    {"id": "demo-tx-a", "settlement": "demo-set-a", "kind": "refund"},
+    {"id": "demo-tx-b", "settlement": "demo-set-a", "kind": "recovery"},
+    {"id": "demo-tx-c", "kind": "refund"}
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "mode": "offline_dry_run",
+  "external_operations": 0,
+  "email": [
+    {
+      "contact": "contact-a",
+      "decision": "dry_run:planned"
+    },
+    {
+      "contact": "contact-b",
+      "decision": "held:consent"
+    },
+    {
+      "contact": "contact-c",
+      "decision": "held:suppressed"
+    }
+  ],
+  "amazon": {
+    "orders": [
+      {
+        "id": "demo-order-a",
+        "quantity": 2
+      },
+      {
+        "id": "demo-order-b",
+        "quantity": 1
+      }
+    ],
+    "pages": 2,
+    "complete": true,
+    "error": null
+  },
+  "fulfillment": {
+    "state": "confirmation_simulated",
+    "audit": [
+      {
+        "sequence": 1,
+        "event": "approve",
+        "from": "needs_review",
+        "to": "approved",
+        "order": "demo-order-a"
+      },
+      {
+        "sequence": 2,
+        "event": "label",
+        "from": "approved",
+        "to": "label_simulated",
+        "order": "demo-order-a"
+      },
+      {
+        "sequence": 3,
+        "event": "message",
+        "from": "label_simulated",
+        "to": "message_simulated",
+        "order": "demo-order-a"
+      },
+      {
+        "sequence": 4,
+        "event": "confirm",
+        "from": "message_simulated",
+        "to": "confirmation_simulated",
+        "order": "demo-order-a"
+      }
+    ]
+  },
+  "erp": {
+    "groups": {
+      "demo-set-a": [
+        "demo-tx-a",
+        "demo-tx-b"
+      ]
+    },
+    "unassigned": [
+      "demo-tx-c"
+    ],
+    "complete": false,
+    "profit": null,
+    "basis": "exact settlement identity; no causal pairing inferred",
+    "limitation": "No cost ledger or accounting integration; profit unknown"
+  }
+}
